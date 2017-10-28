@@ -9,11 +9,14 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 
 ## Architecture
 
+
     +---Controllers
-    |   +---SeassonIDController
-    |   +---TextController
-    |   +---AutoCompleteController
+    |   +---SeassonIDController     // Starts the seassion.
+    |   +---TextController          // Transmitted the actual text.
+    |   +---AutoCompleteController  // Get the next suggestion.
     +---AutoCompleteBrain
-    |   +---TaskScheduler
-    |   +---GraphBuilder
-    |   +---Suggestion
+    |   +---TaskScheduler           // Taskrunner that works step by step the ToDos and comunicates with the graph db.
+    |       +---Task                // A task to work off.
+    |   +---GraphBuilder            // Analysed the text and compute the word connections.
+    |   +---Suggestion              // Gets the next expected for the sentence.
+
