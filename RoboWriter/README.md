@@ -1,6 +1,6 @@
 # RoboWriter
-Author: Manuel Loof
-Date:   2017-10-28
+**Author:** *Manuel Loof*
+**Date:**   *2017-10-28*
 
 
 RoboWriter is an autocompleting tool for ever day writing like the autocomplete function in messengers like WhatsApp.
