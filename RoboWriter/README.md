@@ -9,11 +9,11 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 
 ## Architecture
 
-+---Controllers
-|   +---SeassonIDController
-|   +---TextController
-|   +---AutoCompleteController
-+---AutoCompleteBrain
-|   +---TaskScheduler
-|   +---GraphBuilder
-|   +---Suggestion
+    +---Controllers
+    |   +---SeassonIDController
+    |   +---TextController
+    |   +---AutoCompleteController
+    +---AutoCompleteBrain
+    |   +---TaskScheduler
+    |   +---GraphBuilder
+    |   +---Suggestion
