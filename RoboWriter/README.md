@@ -9,7 +9,8 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 
 - [RoboWriter](#robowriter)
     - [Architecture](#architecture)
-    - [Tools](#tools)
+    - [Toolchain](#toolchain)
+        - [.net core](#net-core)
         - [Neo4J](#neo4j)
 
 ## Architecture
@@ -24,8 +25,19 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
     |       +---Task                // A task to work off.
     |   +---GraphBuilder            // Analysed the text and compute the word connections.
     |   +---Suggestion              // Gets the next expected for the sentence.
+    |   +---DBProvider              // The connection class to the graph db.
 
-## Tools 
+## Toolchain
+
+- .net core
+- neo4j
+
+### .net core
+
+```shell 
+> dotnet build // Builds the assembly
+```
+
 ### Neo4J
 
 - Neo4J gets installed with choclatey with the command `choco install neo4j-community`.
@@ -35,5 +47,4 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 ```shell 
 > neo4j start       // Starts service.
 > neo4j console     // Starts service hosted in a console.
-
 ```
