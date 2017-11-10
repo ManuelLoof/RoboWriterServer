@@ -17,15 +17,20 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 
 
     +---Controllers
-    |   +---SeassonIDController     // Starts the seassion.
-    |   +---TextController          // Transmitted the actual text.
-    |   +---AutoCompleteController  // Get the next suggestion.
+    |   +---SeassonIDController.cs     // Starts the seassion.
+    |   +---TextController.cs          // Transmitted the actual text.
+    |   +---AutoCompleteController.cs  // Get the next suggestion.
     +---AutoCompleteBrain
-    |   +---TaskScheduler           // Taskrunner that works step by step the ToDos and comunicates with the graph db.
-    |       +---Task                // A task to work off.
-    |   +---GraphBuilder            // Analysed the text and compute the word connections.
-    |   +---Suggestion              // Gets the next expected for the sentence.
-    |   +---DBProvider              // The connection class to the graph db.
+    |   +---TaskScheduler.cs           // Taskrunner that works step by step the ToDos and comunicates with the graph db.
+    |       +---Task.cs                // A task to work off.
+    |   +---GraphBuilder.cs            // Analysed the text and compute the word connections.
+    |   +---Suggestion.cs              // Gets the next expected for the sentence.
+    |   +---DBProvider.cs              // The connection class to the graph db.
+    +---Tooling                        // Folder for tooling stuff.
+    |   +---startConsoles.bat          // starts the powershell consoles for git, dotnet and neo4j
+    +---Program.cs                     // Program start
+    +---Startup.cs                     // The mvc Startup class.
+    +---README.md                      // This readme file.
 
 ## Toolchain
 
@@ -35,7 +40,7 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 ### .net core
 
 ```shell 
-> dotnet build // Builds the assembly
+> dotnet build      // Builds the assembly
 ```
 
 ### Neo4J

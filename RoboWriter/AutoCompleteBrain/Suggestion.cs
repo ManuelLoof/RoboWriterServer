@@ -7,6 +7,7 @@ public static class Suggestion
     /// <returns></returns>
     public static string GetNextWord(string word)
     {
+        var db = new DBProvider();
         return "";
     }
 }

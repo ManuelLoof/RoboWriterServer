@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace RoboWriter.AutoCompleteBrain
@@ -8,12 +9,14 @@ namespace RoboWriter.AutoCompleteBrain
     /// <summary>
     /// Analysed the text and compute the word connections.
     /// </summary>
-    public class GraphBuilder
+    public class GraphBuilder : IDisposable
     {
         #region private members
 
         Dictionary<string,string> _words = new Dictionary<string,string>();
         List<string> _wordConnections = new List<string>();  
+
+        DBProvider _graphDB = new DBProvider();
 
         #endregion
 
@@ -36,16 +39,19 @@ namespace RoboWriter.AutoCompleteBrain
         /// <param name="text">The text to analyse.</param>
         public void SetText(string text)
         {
-            var wordElements = GetWordElements(text);
+            var sentences = GetSentences(text);
 
-            foreach (var word in wordElements)
+            foreach (var sentence in sentences)
             {
-                AddWord(word);
+                AddSentence(sentence);
             }
 
         }
-
-
+        
+        public void Dispose()
+        {
+            _graphDB.Dispose();
+        }
 
         #endregion
 
@@ -59,15 +65,19 @@ namespace RoboWriter.AutoCompleteBrain
         private string[] GetWordElements(string text) => Regex.Split(text,@"\W"); // Splitt the text at any character that is not a word character.
 
         /// <summary>
+        /// Get sentences.
+        /// </summary>
+        /// <param name="text">The whole text.</param>
+        /// <returns>A List af sentences.</returns>
+        private string[] GetSentences(string text) => Regex.Split(text,@"[.?!]");
+
+        /// <summary>
         /// Adds the word to the graph.
         /// </summary>
         /// <param name="word"></param>
-        private void AddWord(string word)
+        private void AddSentence(string sentence)
         {
-            if(!_words.ContainsKey(word))
-            {
-                AddWord2GraphDB(word); 
-            }
+           AddSentence2GraphDB(GetWordElements(sentence)); 
         }
 
 
@@ -87,11 +97,10 @@ namespace RoboWriter.AutoCompleteBrain
             //ToDo: Load the words from graphdb.
         }
 
-        private void AddWord2GraphDB(string word)
+        private void AddSentence2GraphDB(string[] sentence)
         {
-            throw new NotImplementedException();
+            _graphDB.AddWordChain(sentence.ToList());
         }
-
 
         #endregion
 
