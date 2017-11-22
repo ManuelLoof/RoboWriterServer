@@ -13,6 +13,7 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
         - [.net core](#net-core)
         - [Neo4J](#neo4j)
         - [Packages](#packages)
+    - [VSCode Extensions](#vscode-extensions)
 
 ## Architecture
 
@@ -57,6 +58,10 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 > neo4j console     // Starts service hosted in a console.
 ```
 
+#### Cypher
+
+    
+
 ### Packages
 
 Packages will be add over
@@ -69,6 +74,24 @@ Example:
 ```shell
 dotnet add package Microsoft.AspNetCore.TestHost --version 2.0.1
 ``` 
+
+
+## VSCode Extensions
+
+- aaronthomas.vscode-snazzy-operator
+- gerane.Theme-Green
+- gerane.Theme-wild-cherry
+- hoovercj.vscode-power-mode
+- IBM.output-colorizer
+- joshpeng.theme-onedark-sublime
+- k--kato.docomment
+- ms-vscode.csharp
+- ms-vscode.PowerShell
+- ms-vscode.Theme-MarkdownKit
+- robertohuertasm.vscode-icons
+- woodywoodsta.vscode-material-syntax-dark
+- yjt.maple
+- yzhang.markdown-all-in-one
 
 
 

@@ -78,6 +78,7 @@ public class DBProvider : IDisposable
         // MERGE (w2:word { value: 'glaub'})
         // MERGE (w1)-[r:relation]->(w2)
 
+        words.RemoveAll(w => String.IsNullOrWhiteSpace(w)); // Remove empty or whitespace words.
 
         var cypher = new StringBuilder();
         int wordCount = 0;

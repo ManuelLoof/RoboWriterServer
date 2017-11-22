@@ -39,6 +39,9 @@ namespace RoboWriter.AutoCompleteBrain
         /// <param name="text">The text to analyse.</param>
         public void SetText(string text)
         {
+            if(String.IsNullOrWhiteSpace(text)) 
+                return;
+
             var sentences = GetSentences(text);
 
             foreach (var sentence in sentences)

@@ -1,20 +1,20 @@
 using System.Threading.Tasks;
 using Xunit;
 
-public class ExampleControllerIntegrationTest : ControllerIntegrationTest
+public class AutoCompleteControllerIntegrationTest : ControllerIntegrationTest
 {
 
     [Fact]
-    public async Task ReturnHelloWorld()
+    public async Task NextWord()
     {
         // Act
-        var response = await _client.GetAsync("/api/example");
+        var response = await _client.GetAsync("/api/autocomplete/das");
         response.EnsureSuccessStatusCode();
 
         var responseString = await response.Content.ReadAsStringAsync();
 
         // Assert
-        Assert.Equal("[\"value1\",\"value2\"]",
+        Assert.Equal("[\"Zivilleben\",\"ist\"]",
             responseString);
     }
 }

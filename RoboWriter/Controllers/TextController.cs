@@ -3,30 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RoboWriter.AutoCompleteBrain;
 
 namespace RoboWriter.Controllers
 {
     [Route("api/[controller]")]
     public class TextController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        GraphBuilder _graphBuilder = new GraphBuilder(); 
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
         {
+            _graphBuilder.SetText(value); 
         }
 
         // PUT api/values/5
@@ -35,10 +26,6 @@ namespace RoboWriter.Controllers
         {
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+
     }
 }
