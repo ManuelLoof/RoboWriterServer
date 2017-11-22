@@ -1,5 +1,5 @@
 # RoboWriter
-**Author:** *Manuel Loof*
+**Author:** *[Manuel Loof](http://www.manuel-loof.de)*
 **Date:**   *2017-10-28*
 
 
@@ -12,6 +12,7 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
     - [Toolchain](#toolchain)
         - [.net core](#net-core)
         - [Neo4J](#neo4j)
+            - [Cypher](#cypher)
         - [Packages](#packages)
     - [VSCode Extensions](#vscode-extensions)
 
