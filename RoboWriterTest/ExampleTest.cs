@@ -3,7 +3,7 @@ using Xunit;
 
 namespace RoboWriterTest
 {
-    public class UnitTest1
+    public class ExampleTest
     {
         [Fact]
         public void Test1()

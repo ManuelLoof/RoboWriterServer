@@ -12,6 +12,7 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
     - [Toolchain](#toolchain)
         - [.net core](#net-core)
         - [Neo4J](#neo4j)
+        - [Packages](#packages)
 
 ## Architecture
 
@@ -36,6 +37,7 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 
 - .net core
 - neo4j
+- nuget
 
 ### .net core
 
@@ -50,6 +52,23 @@ This is the RoboWriter server which is used by add-ins for editors like visual s
 - The server gets started by `c:\tools\neo4j-community\neo4j-community-3.2.6\bin\neo4j.bat`
 
 ```shell 
+> cd c:\tools\neo4j-community\neo4j-community-3.2.6\bin\
 > neo4j start       // Starts service.
 > neo4j console     // Starts service hosted in a console.
 ```
+
+### Packages
+
+Packages will be add over
+
+```shell 
+dotnet add package 
+```
+
+Example:
+```shell
+dotnet add package Microsoft.AspNetCore.TestHost --version 2.0.1
+``` 
+
+
+
