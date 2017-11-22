@@ -1,5 +1,5 @@
 # RoboWriterTest
-**Author:** *Manuel Loof*
+**Author:** *[Manuel Loof](http://www.manuel-loof.de)*
 **Date:**   *2017-11-22*
 
 - [RoboWriterTest](#robowritertest)
