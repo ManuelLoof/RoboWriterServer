@@ -5,11 +5,11 @@ using RoboWriter;
 using Xunit;
 using Microsoft.AspNetCore.TestHost;
 
-public class ValuesControllerIntegrationTest
+public class ExampleControllerIntegrationTest
 {
     private readonly TestServer _server;
     private readonly HttpClient _client;
-    public ValuesControllerIntegrationTest()
+    public ExampleControllerIntegrationTest()
     {
         // Arrange
         _server = new TestServer(new WebHostBuilder()
@@ -21,7 +21,7 @@ public class ValuesControllerIntegrationTest
     public async Task ReturnHelloWorld()
     {
         // Act
-        var response = await _client.GetAsync("/api/values");
+        var response = await _client.GetAsync("/api/example");
         response.EnsureSuccessStatusCode();
 
         var responseString = await response.Content.ReadAsStringAsync();

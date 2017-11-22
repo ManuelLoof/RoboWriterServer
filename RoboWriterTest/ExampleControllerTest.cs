@@ -9,7 +9,7 @@ namespace RoboWriterTest
         [Fact]
         public void TestValues()
         {
-            var values = new ValuesController();
+            var values = new ExampleController();
             var result = new List<string>(values.Get());
             Assert.True(result.Count == 2);     
         }
